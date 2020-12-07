@@ -1,0 +1,29 @@
+#!/usr/bin/bash
+Userdetails()
+{
+read -p "enter first name" firstname
+read -p "enter last name" lastname
+read -p "enter your email" email
+read -p "enter your password" password
+read -p "enter your mobile no" mobile
+
+arr[0]=$firstname
+arr[1]=$lastname
+arr[2]=$email
+arr[3]=$password
+arr[5]=$mobile
+
+ lenght=${#arr[@]}
+ echo "lenght of the array is $lenght"
+
+ if [ $lenght -eq 0 ]
+ then
+ echo "please fill the fields"
+ Userdetails
+ else
+ echo "twos power of the lenght is":
+ echo "$((2 ** $lenght))" 
+fi
+}
+
+Userdetails
